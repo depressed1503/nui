@@ -1,0 +1,25 @@
+.custom-button {
+    all: unset;
+    background-color: transparent;
+    color: var(--color-black);
+    gap: var(--gap-m);
+    padding: var(--gap-m);
+    display: flex;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button__text {
+    max-width: 0;
+    transition: var(--transition);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.custom-button:hover > .custom-button__text {
+    max-width: 200px; /* или другое ограничение */
+}

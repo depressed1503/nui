@@ -1,0 +1,26 @@
+.ntable-pagination {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-m);
+  padding: var(--gap-m) 0px;
+  align-items: center;
+}
+
+.ntable-pagination__button {
+  all: unset;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background-color: #ffffff;
+}
+
+.ntable-pagination__input {
+  all: unset;
+  border-bottom: 2px solid var(--lightblue);
+  transition: var(--transition);
+  width: 4rem;
+  text-align: center;
+}
+
+.ntable-pagination__input:focus {
+  border-color: var(--black);
+}

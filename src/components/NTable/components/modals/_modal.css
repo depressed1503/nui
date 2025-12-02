@@ -1,0 +1,5 @@
+.bulk-modal {
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    padding: var(--l);
+}

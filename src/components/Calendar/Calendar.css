@@ -1,0 +1,174 @@
+button {
+    border-radius: var(--border-radius);
+    border: none;
+    display: grid;
+    place-content: center;
+}
+
+.calendar {
+  display: flex;
+  max-width: max-content;
+  background: #fff;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow)
+}
+
+/* LEFT PRESETS */
+.calendar-left {
+  width: 160px;
+  padding: 12px;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preset {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.preset:hover {
+  color: var(--color-blue)
+}
+
+.preset-clear {
+  margin-top: auto;
+  color: var(--color-blue);
+  cursor: pointer;
+}
+
+/* RIGHT PANEL */
+.calendar-body {
+  padding: 12px;
+  width: 280px;
+}
+
+/* Month/Year selector panel */
+.month-year-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  padding: 14px;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: var(--border-radius);
+  margin-bottom: 12px;
+}
+
+.my-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-row label {
+  font-size: 14px;
+}
+
+.year-input,
+.month-year-panel select {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: var(--border-radius);
+}
+
+.my-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn-cancel {
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.btn-apply {
+  background: var(--color-blue);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Header */
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cal-header__month {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--border-radius);
+}
+
+.cal-header__month:hover {
+  background: var(--color-lightblue);
+  color: var(--color-blue);
+}
+
+/* Weekdays */
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+/* Grid */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.day {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dim {
+  opacity: 0.35;
+}
+
+.day:hover {
+  background: var(--color-lightgrey);
+}
+
+/* Selected & in-range */
+.sel,
+.sel-start,
+.sel-end {
+  background: var(--color-blue);
+  color: white;
+  border-radius: 50%;
+}
+
+.in-range {
+  background: #dbe7ff;
+  border-radius: 4px;
+}
+
+.sel-start {
+  border-radius: 50% 0 0 50%;
+}
+
+.sel-end {
+  border-radius: 0 50% 50% 0;
+}

@@ -1,0 +1,6 @@
+.skeleton {
+  background-color: var(--lightblue);
+  border-radius: var(--border-radius);
+  height: 30px;
+  width: 100%;
+}

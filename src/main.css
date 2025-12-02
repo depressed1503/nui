@@ -1,0 +1,16 @@
+* {
+    --l: 16px;
+    --m: 8px;
+    --s: 4px;
+    --border-radius: 10px;
+    --lightblue: #DBE1E6;
+    --blue: #0088FF; 
+    --black: #333333;
+    --shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease-in-out;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding: 30px;
+}

@@ -1,0 +1,13 @@
+.tag-pill {
+    min-width: max-content;
+    border-radius: 300px;
+    border: 2px solid;
+    padding: var(--s) var(--m);
+}
+
+.tag-pill-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s);
+}

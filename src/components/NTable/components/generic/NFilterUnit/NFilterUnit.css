@@ -1,0 +1,54 @@
+.filter-unit {
+    background-color: transparent;
+    border-bottom: 2px solid var(--lightblue);
+    display: flex;
+    flex-direction: row;
+    gap: var(--m);
+    height: 100%;
+}
+
+.filter-unit__left {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-unit__left > * {
+    min-height: 20px;
+}
+.filter-unit__left > *:first-child {
+    color: var(--lightblue);
+}
+
+.filter-unit__right {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    align-items: center;
+}
+
+.filter-unit svg {
+    fill: var(--lightblue);
+    color: var(--lightblue);
+    transition: var(--transition);
+}
+
+.filter-unit svg:hover {
+    fill: var(--black);
+    color: var(--black);
+}
+
+.filter-unit__dropdown {
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--lightblue);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    min-width: 200px;
+}
+
+.filter-unit__value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 225px;
+}
