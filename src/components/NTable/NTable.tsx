@@ -14,7 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useRef, useState } from "react";
 import NTablePagination from "./components/generic/NTablePagination";
 import NFilterBar from "./components/generic/NFilterBar";
-import { Eye, Funnel, Pencil, RotateCw } from "lucide-react";
+import { Eye, Funnel, RotateCw } from "lucide-react";
 import NHoverButton from "./components/generic/NHoverButton";
 import NSelectCell from "./components/cells/NSelectCell/NSelectCell";
 import NSelectHeader from "./components/cells/NSelectHeader/NSelectHeader";
@@ -22,9 +22,10 @@ import ColumnSettings from "./components/generic/ColumnSettings";
 import DropdownPortal from "../DropDownPortal";
 import useOutsideClick from "./hooks/useOutsideClick";
 import Skeleton from "../Sceleton";
+import NEditCell from "./components/cells/NEditCell";
 
 export default function Ntable<
-  TData extends object,
+  TData extends Record<string, unknown>,
   TQueryParams extends FetchParams
 >(props: NTableProps<TData, TQueryParams>) {
   const columnHelper = createColumnHelper<TData>();
@@ -38,13 +39,13 @@ export default function Ntable<
       enableResizing: false,
       size: 20,
     }),
-
     props.enableEdit &&
       columnHelper.display({
-        id: "Редактура",
-        cell: () => <Pencil />,
+        id: "edit",
+        header: "",
+        cell: ({ row, table }) => <NEditCell row={row} table={table} />,
         enableResizing: false,
-        size: 20,
+        size: 28,
       }),
   ].filter(Boolean);
   const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({});

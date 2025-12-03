@@ -6,9 +6,7 @@ type DateMeta = {
   outputFormat: string; // формат строки, которую надо вывести
 };
 
-export function NDateCell<TData, TValue extends string>(
-  ctx: CellContext<TData, TValue>
-) {
+export function NDateCell<TData, TValue>(ctx: CellContext<TData, TValue>) {
   const value = ctx.getValue();
   const meta = ctx.column.columnDef.meta as DateMeta;
 
@@ -20,10 +18,10 @@ export function NDateCell<TData, TValue extends string>(
   let parsed: Date;
 
   try {
-    parsed = parse(value, inputFormat, new Date());
+    parsed = parse(value as string, inputFormat, new Date());
     if (isNaN(parsed.getTime())) throw new Error("Invalid date");
   } catch {
-    return <span>{value}</span>; // fallback если парсинг не удался
+    return <span>{value as string}</span>; // fallback если парсинг не удался
   }
 
   const formatted = format(parsed, outputFormat);

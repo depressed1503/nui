@@ -8,9 +8,9 @@ import { NTagsCell } from "../components/NTable/components/cells/NTagsCell/NTags
 import { NCell } from "../components/NTable/components/cells/NCell/NCell";
 import { NStatusCell } from "../components/NTable/components/cells/NReadMoreCell/NReadMoreCell";
 import { NDateCell } from "../components/NTable/components/cells/NDateCell/NDateCell";
-import AnalyzeModal from "../components/NTable/components/modals/AnalyzeModal";
-import ExportModal from "../components/NTable/components/modals/ExportModal";
-import SendModal from "../components/NTable/components/modals/SendModal";
+import AnalyzeModal from "../components/NTable/components/modals/actions/AnalyzeModal";
+import ExportModal from "../components/NTable/components/modals/actions/ExportModal";
+import SendModal from "../components/NTable/components/modals/actions/SendModal";
 
 export default function AnalyticsTablePage() {
   const columnHelper = createColumnHelper<Order>();
@@ -22,6 +22,9 @@ export default function AnalyticsTablePage() {
         cell: () => <ChartColumnBig />,
         enableResizing: false,
         size: 20,
+        meta: {
+          editable: true,
+        },
       }),
       columnHelper.accessor((order) => order.number, {
         id: "number",
@@ -35,6 +38,9 @@ export default function AnalyticsTablePage() {
         id: "company",
         header: "ДО",
         cell: NCell,
+        meta: {
+          editable: true,
+        },
       }),
       columnHelper.accessor((order) => order.creation_time, {
         id: "creation_time",
@@ -44,6 +50,7 @@ export default function AnalyticsTablePage() {
           inputFormat: "yyyy-MM-dd HH:mm", // входящий формат
           outputFormat: "dd.MM.yyyy HH:mm", // формат для отображения
           filterType: "date-range",
+          editable: true,
         },
       }),
       columnHelper.accessor((order) => order.status, {
@@ -58,17 +65,24 @@ export default function AnalyticsTablePage() {
             { label: "Статус 3", value: "Статус 3" },
             { label: "Статус 4", value: "Статус 4" },
           ],
+          editable: true,
         },
       }),
       columnHelper.accessor((order) => order.short_description, {
         id: "short_description",
         header: "Краткое описание",
         cell: NCell,
+        meta: {
+          editable: true,
+        },
       }),
       columnHelper.accessor((order) => order.tags, {
         id: "tags",
         header: "Теги",
         cell: NTagsCell,
+        meta: {
+          editable: true,
+        },
       }),
     ];
   }, [columnHelper]);
